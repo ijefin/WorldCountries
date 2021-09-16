@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootswatch/dist/lumen/bootstrap.min.css'
 import './index.css';
 import App from './App';
-import Header from './components/Header'
-import Filter from './components/Filter'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-   
-    <div className="container"> 
-
-    <Filter />
+  <Router>
     <App />
-    </div>
-  </React.StrictMode>,
+  </Router>,
   document.getElementById('root')
 );
