@@ -13,7 +13,7 @@ function Home() {
 
   //Integração com a API
   useEffect(async () => {
-    const res = await fetch("https://restcountries.eu/rest/v2/all");
+    const res = await fetch("https://restcountries.com/v2/all");
     const data = await res.json();
     setPaises(data);
   }, []);
@@ -42,10 +42,10 @@ function Home() {
     await setPaises(data);
   };
 
-  //Função de busca (Com apenas 2 letras ja recebe um retorno)
+  //Função de busca (Com apenas 2 letras já recebe um retorno)
   const buscarPais = async (item) => {
     if (item.length < 2 || item === "") return;
-    const res = await fetch(`https://restcountries.eu/rest/v2/name/${item}`);
+    const res = await fetch(`https://restcountries.com/v2/name/${item}`);
     const data = await res.json();
     await console.log(data);
     await setPaises(data);
@@ -97,7 +97,7 @@ function Home() {
       </div>
       {/* FIM 3 */}
 
-    {/* Consumindo API e Mostrando dados */}
+      {/* Consumindo API e Mostrando dados */}
       <div className="container grid grid-cols-4 gap-16 mx-auto">
         {paises.map((pais, index) => (
           <Link to={{ pathname: "detalhes", state: pais }} key={index}>
